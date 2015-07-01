@@ -1,1 +1,1 @@
-web: java -jar target/contact-form-0.1.0-SNAPSHOT-standalone.jar contact-form.core
+web: lein run -m contact-form.core
