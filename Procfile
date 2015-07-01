@@ -1,1 +1,1 @@
-web: lein run -m contact-form.core
+web: java $JVM_OPTS -jar target/contact-form.jar

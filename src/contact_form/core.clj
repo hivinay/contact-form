@@ -1,9 +1,11 @@
 (ns contact-form.core
   (:gen-class)
   (:require [compojure.core :refer [defroutes POST]]
+            [compojure.handler :refer [site]]
             [org.httpkit.server :refer [run-server]]
             [clojure.java.jdbc :as sql]
-            [clojure.string :refer [split]]))
+            [clojure.string :refer [split]]
+            [ring.adapter.jetty :as jetty]))
 
 (def ^:const form-params [:name :email :subject :message])
 
@@ -32,4 +34,4 @@
   [& args]
   (let [port (get-port)]
     (println (str "Listening on port: " port))
-    (run-server routes {:port (get-port)})))
+    (jetty/run-jetty (site #'routes) {:port port :join? false})))

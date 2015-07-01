@@ -8,8 +8,8 @@
                  [http-kit "2.1.19"]
                  [compojure "1.3.4"]
                  [org.clojure/java.jdbc "0.3.7"]
-                 [postgresql "9.3-1102.jdbc41"]]
+                 [postgresql "9.3-1102.jdbc41"]
+                 [ring/ring-jetty-adapter "1.3.2"]]
   :uberjar-name "contact-form.jar"
   :main ^:skip-aot contact-form.core
-  :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
