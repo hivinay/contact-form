@@ -1,36 +1,17 @@
 # contact-form
 
-FIXME: description
+This is a backend for a basic contact form (receiving name, email, etc.) that will be hosted on my personal website. The frontend will probably use JQuery or similar to POST a JSON string, which this backend (written in Clojure) will add to a database of responses hosted on Heroku. As such, this is currently a Heroku app on the free tier so the latency of several seconds on waking up from sleep is proving problematic.
 
 ## Installation
 
-Download from http://example.com/FIXME.
-
-## Usage
-
-FIXME: explanation
-
-    $ java -jar contact-form-0.1.0-standalone.jar [args]
+Download and run in Leiningen after setting the correct environment variables.
 
 ## Options
 
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
+CONTACT_DB environment variable is a PostgreSQL link to my contact form responses database, which has a relation `responses` with columns for each form field.
 
 ### Bugs
 
+Currently doesn't actually handle form POST data. Working on bypassing this by switching to JSON, a better choice in the long-term anyway.
+
 ...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2015 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
